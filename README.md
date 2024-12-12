@@ -92,7 +92,6 @@ Welcome to my professional portfolio! Below is a showcase of the projects I've l
 
 ## 📫 Contact
 Feel free to connect with me to discuss my projects or explore collaboration opportunities:
-- **Email:** [Irene.Torguson@Gmail.COM](mailto:Irene.Torguson@Gmail.COM)  
 - **LinkedIn:** [linkedin.com/in/IreneTorguson](https://www.linkedin.com/in/IreneTorguson)
 
 ---
