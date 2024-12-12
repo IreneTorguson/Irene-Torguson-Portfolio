@@ -1,0 +1,231 @@
+# AI and ML Projects Across Industries
+
+## Overview
+
+This repository highlights six innovative AI/ML projects delivered across multiple organizations: Mastercard, Google, Vector Solutions, Axiom Medical, Nosugrot, and Nasdaq. These projects showcase how advanced machine learning techniques were used to address complex problems, enhance user experiences, and drive measurable business outcomes.
+
+---
+
+## 1️⃣ Mastercard: AI for Predictive Analytics and Fraud Detection
+
+### Market Research
+- Analyzed high churn rates and increasing financial losses due to fraudulent transactions.
+- Benchmarked predictive models from competitors in financial services.
+
+### Hypothesis
+Leveraging predictive analytics can reduce churn by 15% and enhance fraud detection accuracy by 25%.
+
+### Personas
+- **Customers:** Avoid incorrect fraud flags.
+- **Financial Analysts:** Enhance efficiency in fraud analysis.
+- **Merchants:** Minimize transaction interruptions.
+
+### Gap Analysis
+- Inadequate handling of imbalanced datasets.
+- Limited interpretability of current models.
+
+### Considered Models
+- **Random Forest:** Robust but computationally intensive.
+- **Logistic Regression:** Simple but unsuitable for imbalanced data.
+- **XGBoost:** Efficient with high accuracy for tabular data.
+
+### Model Chosen and Why
+**XGBoost** was chosen for its scalability and ability to handle class imbalances effectively.
+
+### Training and Testing
+- **Data:** Transaction history, rewards usage, demographics, and feedback.
+- **Training:** Addressed class imbalance using SMOTE and fine-tuned hyperparameters via cross-validation.
+- **Testing:** Split data (80% train, 20% test); evaluated using Precision, Recall, and ROC-AUC.
+
+### Results and Metrics
+- **Customer Retention:** Increased by 18%.
+- **ROC-AUC:** Achieved 0.92.
+- **Precision:** Improved by 25% for churn detection.
+
+---
+
+## 2️⃣ Google: Consumer AI for Smart Devices
+
+### Market Research
+- Explored user dissatisfaction with smart device interactions.
+- Competitor analysis of Amazon Alexa and Apple Siri.
+
+### Hypothesis
+Improved NLP can boost user satisfaction by 30% and enhance device command accuracy.
+
+### Personas
+- **Smart Device Users:** Desire accurate and intuitive device interactions.
+- **Product Managers:** Need higher adoption rates and reduced complaints.
+
+### Gap Analysis
+- Lack of contextual understanding in noisy environments.
+- Limited naturalness in device responses.
+
+### Considered Models
+- **BERT:** Exceptional for NLP tasks.
+- **RNN (LSTM/GRU):** Effective but computationally expensive.
+- **Tacotron 2:** State-of-the-art for TTS (Text-to-Speech).
+
+### Model Chosen and Why
+**BERT** for NLP and **Tacotron 2** for TTS were chosen for their advanced contextual understanding and natural response synthesis.
+
+### Training and Testing
+- **Data:** Annotated voice commands.
+- **Training:** Fine-tuned BERT for intent recognition; trained Tacotron 2 on text-audio pairs.
+- **Testing:** Real-world device usage; measured CSAT and command execution accuracy.
+
+### Results and Metrics
+- **Command Accuracy:** Improved by 25%.
+- **Customer Satisfaction:** Increased by 30%.
+
+---
+
+## 3️⃣ Vector Solutions: AI for Education Platforms
+
+### Market Research
+- Identified a demand for accessible transcription and concise summaries.
+- Benchmarked tools like Whisper and T5 for transcription and summarization.
+
+### Hypothesis
+Real-time transcription and summarization improve accessibility and engagement by 20%.
+
+### Personas
+- **Educators:** Simplify content delivery.
+- **Learners:** Enhance understanding and retention of materials.
+
+### Gap Analysis
+- Low accuracy in noisy audio environments.
+- Inconsistent summary quality with simpler models.
+
+### Considered Models
+- **Whisper ASR:** Best-in-class for transcription accuracy.
+- **T5:** Effective for summarization.
+
+### Model Chosen and Why
+**Whisper ASR** and **T5** outperformed alternatives in transcription fidelity and summary quality.
+
+### Training and Testing
+- **Data:** Educational videos with transcripts.
+- **Training:** Fine-tuned Whisper for transcription and T5 for summaries.
+- **Testing:** WER for transcription; ROUGE for summaries.
+
+### Results and Metrics
+- **WER:** Reduced to 6%.
+- **ROUGE-1:** Achieved 0.85.
+- **Engagement Rates:** Improved by 20%.
+
+---
+
+## 4️⃣ Axiom Medical: Predictive Health Monitoring
+
+### Market Research
+- Explored gaps in health trend predictions for employees.
+- Identified time series models suitable for health monitoring.
+
+### Hypothesis
+Predictive health trends reduce intervention lag by 2 days.
+
+### Personas
+- **HR Teams:** Monitor and manage workforce health proactively.
+- **Employees:** Receive timely health alerts.
+
+### Gap Analysis
+- Inability to predict trends from sequential data.
+- Inefficient alerts for early intervention.
+
+### Considered Models
+- **LSTM:** Best for capturing sequential patterns.
+- **ARIMA:** Simple but not multi-variable.
+- **Transformers:** Overkill for the dataset.
+
+### Model Chosen and Why
+**LSTM** captured long-term dependencies in health trend data effectively.
+
+### Training and Testing
+- **Data:** Historical health check-ins.
+- **Training:** Normalized sequential health data; trained LSTM on sliding windows.
+- **Testing:** MAE and precision for anomaly detection.
+
+### Results and Metrics
+- **Intervention Lag:** Reduced by 2 days.
+- **Platform Adoption:** Increased by 15%.
+
+---
+
+## 5️⃣ Nosugrot: AI-Driven Marketplace Platform
+
+### Market Research
+- Evaluated user demand for personalized product recommendations.
+- Benchmarked collaborative filtering and neural models.
+
+### Hypothesis
+Personalization increases CTR by 15% and conversions by 10%.
+
+### Personas
+- **Marketplace Users:** Desire relevant product recommendations.
+- **Merchants:** Improve product visibility and sales.
+
+### Gap Analysis
+- Poor handling of sparse data and cold starts.
+
+### Considered Models
+- **Collaborative Filtering:** Simple but limited for sparse data.
+- **NCF:** Scalable and accurate.
+
+### Model Chosen and Why
+**NCF** modeled user-item interactions effectively and handled growth.
+
+### Training and Testing
+- **Data:** User browsing and purchase behavior.
+- **Training:** Pretrained embeddings and trained using negative sampling.
+- **Testing:** A/B testing with baseline models.
+
+### Results and Metrics
+- **CTR:** Increased by 15%.
+- **Conversion Rate:** Improved by 10%.
+
+---
+
+## 6️⃣ Nasdaq: Governance & Compliance Tools
+
+### Market Research
+- Identified inefficiencies in governance anomaly detection.
+- Benchmarked autoencoder models for large datasets.
+
+### Hypothesis
+AI-driven anomaly detection reduces response times by 25%.
+
+### Personas
+- **Compliance Teams:** Detect and resolve anomalies faster.
+- **Regulators:** Ensure governance standards compliance.
+
+### Gap Analysis
+- Lack of robust anomaly detection for large datasets.
+
+### Considered Models
+- **Autoencoder:** Highly sensitive to anomalies.
+- **Isolation Forest:** Lightweight but less robust.
+
+### Model Chosen and Why
+**Autoencoder** provided superior sensitivity and scalability.
+
+### Training and Testing
+- **Data:** Historical compliance logs.
+- **Training:** Trained autoencoder on normal data; flagged reconstruction errors as anomalies.
+- **Testing:** Compared against manually labeled data.
+
+### Results and Metrics
+- **Incident Response Time:** Reduced by 25%.
+- **Anomaly Precision:** Improved by 30%.
+
+---
+
+## 📫 Contact
+
+For inquiries or collaboration opportunities, reach out:
+- **LinkedIn:** [linkedin.com/in/IreneTorguson](https://www.linkedin.com/in/IreneTorguson)
+
+---
+
+**Note:**  
+This repository reflects the innovative application of AI/ML across multiple industries. Proprietary details have been anonymized or generalized for public sharing.
