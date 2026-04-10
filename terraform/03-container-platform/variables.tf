@@ -72,6 +72,12 @@ variable "cpu_target_utilization" {
   default     = 60
 }
 
+variable "memory_target_utilization" {
+  description = "Target memory utilisation percentage for auto-scaling"
+  type        = number
+  default     = 70
+}
+
 variable "health_check_path" {
   description = "HTTP path used by the ALB health check"
   type        = string

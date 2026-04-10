@@ -184,6 +184,9 @@ resource "aws_ecs_cluster_capacity_providers" "main" {
   capacity_providers = ["FARGATE", "FARGATE_SPOT"]
 
   default_capacity_provider_strategy {
+    # FARGATE_SPOT is used for non-production to reduce costs (~70% savings).
+    # FARGATE (on-demand) is used in prod for reliability — Spot instances can be
+    # reclaimed with 2-minute notice, which may cause brief task interruptions.
     capacity_provider = terraform.workspace == "prod" ? "FARGATE" : "FARGATE_SPOT"
     weight            = 1
   }
@@ -308,7 +311,7 @@ resource "aws_appautoscaling_policy" "memory" {
     predefined_metric_specification {
       predefined_metric_type = "ECSServiceAverageMemoryUtilization"
     }
-    target_value       = 70.0
+    target_value       = var.memory_target_utilization
     scale_in_cooldown  = 300
     scale_out_cooldown = 60
   }

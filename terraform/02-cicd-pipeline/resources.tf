@@ -112,17 +112,26 @@ data "aws_iam_policy_document" "codebuild_policy" {
   }
 
   statement {
-    sid    = "ECR"
+    sid    = "ECRAuth"
+    effect = "Allow"
+    actions = [
+      "ecr:GetAuthorizationToken",
+    ]
+    # GetAuthorizationToken is a global action and does not support resource-level restrictions
+    resources = ["*"]
+  }
+
+  statement {
+    sid    = "ECRRepository"
     effect = "Allow"
     actions = [
       "ecr:BatchCheckLayerAvailability",
       "ecr:CompleteLayerUpload",
-      "ecr:GetAuthorizationToken",
       "ecr:InitiateLayerUpload",
       "ecr:PutImage",
       "ecr:UploadLayerPart",
     ]
-    resources = ["*"]
+    resources = [aws_ecr_repository.app.arn]
   }
 
   statement {
@@ -131,9 +140,25 @@ data "aws_iam_policy_document" "codebuild_policy" {
     actions = [
       "ecs:DescribeServices",
       "ecs:UpdateService",
+    ]
+    resources = [
+      "arn:aws:ecs:${local.region}:${local.account_id}:cluster/${var.ecs_cluster_name}",
+      "arn:aws:ecs:${local.region}:${local.account_id}:service/${var.ecs_cluster_name}/${var.ecs_service_name}",
+    ]
+  }
+
+  statement {
+    sid    = "PassRoleToECS"
+    effect = "Allow"
+    actions = [
       "iam:PassRole",
     ]
-    resources = ["*"]
+    resources = ["arn:aws:iam::${local.account_id}:role/${local.prefix}-*"]
+    condition {
+      test     = "StringLike"
+      variable = "iam:PassedToService"
+      values   = ["ecs-tasks.amazonaws.com"]
+    }
   }
 }
 
