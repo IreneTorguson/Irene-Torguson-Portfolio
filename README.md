@@ -90,6 +90,18 @@ Welcome to my professional portfolio! Below is a showcase of the projects I've l
 
 ---
 
+## 🏗️ Terraform Workflow Examples
+
+A collection of infrastructure-as-code examples demonstrating common workflows for application developers deploying on AWS. See the [`terraform/`](./terraform/) directory for full source and usage instructions.
+
+| Example | Description |
+|---------|-------------|
+| [01 — Basic Web App](./terraform/01-basic-web-app/) | VPC, EC2 Auto Scaling Group, ALB, and RDS (PostgreSQL) |
+| [02 — CI/CD Pipeline](./terraform/02-cicd-pipeline/) | CodePipeline + CodeBuild pipeline: build → test → deploy to ECS |
+| [03 — Container Platform](./terraform/03-container-platform/) | ECS Fargate cluster with auto-scaling, Container Insights, and CloudWatch alarms |
+
+---
+
 ## 📫 Contact
 Feel free to connect with me to discuss my projects or explore collaboration opportunities:
 - **LinkedIn:** [linkedin.com/in/IreneTorguson](https://www.linkedin.com/in/IreneTorguson)

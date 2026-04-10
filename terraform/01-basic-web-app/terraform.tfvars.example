@@ -1,0 +1,19 @@
+# Copy this file to terraform.tfvars and fill in your values.
+# Do NOT commit terraform.tfvars to source control.
+
+aws_region   = "us-east-1"
+project_name = "webapp"
+
+ami_id        = "ami-0abcdef1234567890"   # Replace with the current AL2023 AMI in your region
+instance_type = "t3.small"
+
+asg_min_size         = 1
+asg_max_size         = 4
+asg_desired_capacity = 2
+
+db_username = "appuser"
+db_password = "REPLACE_ME_use_secrets_manager_in_prod"
+db_name     = "appdb"
+
+# Leave empty to skip HTTPS; provide an ACM ARN to enable it
+certificate_arn = ""
